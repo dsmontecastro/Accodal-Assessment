@@ -3,6 +3,7 @@
   "author": "Daniel S. Montecastro",
   "license": "ISC",
   "version": "1.0.0",
-  "main": "src/index.ts",
-  "scripts": {}
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
