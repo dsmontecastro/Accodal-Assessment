@@ -26,26 +26,26 @@
 }
 
 #root {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
+
+div.tz {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tz p.zone {
+  font-size: xx-large;
+}
+
+.tz p.datetime {
+  font-size: x-large;
+}
+
 
 
 /* Global Settings */
 * {
-
-  /* For Borders */
-  box-sizing: content-box;
-
-  /* For Hiding Scrollbar */
-  overflow: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-}
-
-/* Chrome, Safari and Opera */
-*::-webkit-scrollbar {
-  width: 0 !important
+  box-sizing: border-box;
 }

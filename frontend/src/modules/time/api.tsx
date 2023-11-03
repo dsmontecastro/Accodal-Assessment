@@ -21,22 +21,26 @@ export default function TimeAPI() {
     }, []);
 
 
-    return <>
+    return (
 
-        <div>
+        <div className='flex flex-row justify-evenly h-[100px] px-[3%] py-[0.5%]'>
 
-            {!local ? 'Fetching data...' :
-                <div>
-                    <p> Local Time: {local} </p>
+            {!local ? <p className='text-2xl'> Loading data... </p> :
+                <>
+                    <div className='tz'>
+                        <p className='zone'> Local Time </p>
+                        <p className='datetime'> {local} </p>
+                    </div>
+
                     <Conversion local={local} name={'Pacific'} zone={TZ.PST} />
                     <Conversion local={local} name={'Eastern'} zone={TZ.EST} />
                     <Conversion local={local} name={'Western'} zone={TZ.WST} />
                     <Conversion local={local} name={'Greenwich'} zone={TZ.GMT} />
-                </div>
+                </>
             }
 
         </div>
 
-    </>
+    )
 
 }

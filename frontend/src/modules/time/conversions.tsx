@@ -46,10 +46,18 @@ export function Conversion({ zone, name, local }: Props) {
     }, [local, zone]);
 
 
-    return <>
-        {!dateTime ? 'Fetching data...' :
-            <p> {name}: {dateTime} </p>
-        }
-    </>
+    return (
+
+        <div className='tz'>
+
+            {!dateTime ? <p> Fetching data... </p> :
+                <>
+                    <p className='zone'> {name} </p>
+                    <p className='datetime'> {dateTime} </p>
+                </>
+            }
+
+        </div>
+    )
 
 }
