@@ -29,9 +29,9 @@ Skip the installation and try out the applications through these sites:
         ```
 
 * Move (`cd`) to either __./frontend__ or __./backend__ folders and run these commands in order:
-        ```sh
-        pnpm run build
-        pnpm run start
-        ```
+  ```sh
+  pnpm run build
+  pnpm run start
+  ```
 
 * Finally, `CTRL + Click` the links shown in the terminal to check out the apps!
