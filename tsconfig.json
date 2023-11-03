@@ -24,5 +24,13 @@
       "DOM",
       "DOM.Iterable"
     ]
-  }
+  },
+  "references": [
+    {
+      "path": "./backend"
+    },
+    {
+      "path": "./frontend"
+    }
+  ]
 }
