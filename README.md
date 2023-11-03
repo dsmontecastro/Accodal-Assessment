@@ -4,6 +4,7 @@ Skip the installation and try out the applications through these sites:
 * Front-End: https://dsmontecastro.github.io/Accodal-Assessment/
 
 
+
 ### Local Setup
 * Install [Node](https://nodejs.org/en/download) & [PNPM](https://pnpm.io/installation), if needed.
 
