@@ -6,11 +6,21 @@ interface Props {
 }
 
 export default function PhotoCard({ id, photo }: Props) {
+    /**
+     * Cards for the Pexels-Grid component.
+     * @param {number} id    Indexing for the <key> prop.
+     * @param {Photo}  photo Object containing the relevant information about the subject <photo>.
+    */
 
     const url = photo.url;
     const title = getTitle(url);
 
     function getTitle(text: string) {
+        /**
+         * Extracts the <title> from the <photo>'s <url>.
+         * @param {string} text String that should be the <photo>'s url.
+         * @return {string} Returns a properly split & capitalized <title>.
+        */
 
         const texts = text.split('/');
         let title = texts.slice(-2, -1)[0];
@@ -39,15 +49,18 @@ export default function PhotoCard({ id, photo }: Props) {
             </a>
 
             <span className='
-                absolute left-0 bottom-[2%]
+                absolute left-0 bottom-[2%] text-xs
                 w-[90%] mx-[5%] my-[5%] px-[3%] py-[2%]
-                bg-black bg-opacity-70
+                max-md:hidden bg-black bg-opacity-70
             '>
 
                 <h1 className='text-left'> {title} </h1>
 
                 <p className='text-right'>
-                    By: <a href={photo.photographer_url}> {photo.photographer} </a>
+                    By:
+                    <a href={photo.photographer_url}>
+                        <u> {photo.photographer} </u>
+                    </a>
                 </p>
 
             </span>

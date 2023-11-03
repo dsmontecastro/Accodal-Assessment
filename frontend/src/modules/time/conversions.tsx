@@ -10,10 +10,20 @@ interface Props {
 }
 
 export function Conversion({ zone, name, local }: Props) {
+    /**
+     * Converts the given <local> datetime to the target <zone>
+     * @param {TZ}     zone  TimeZone enum linked to its IANA designation.
+     * @param {string} name  Shorthand <name> to be used in the following JSX component.
+     * @param {string} local DateTime to be converted.
+    */
 
     const [dateTime, setDateTime] = useState<string>('');
 
     useEffect(() => {
+        /**
+         * Fetches and sets the <local> dateTime on Component-Mount & Updates.
+         * Will only process if the <local> dateTime is not empty.
+        */
 
         if (local) {
 

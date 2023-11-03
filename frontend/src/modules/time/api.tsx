@@ -5,10 +5,12 @@ import { Conversion } from './conversions';
 
 
 export default function TimeAPI() {
+    // Component that handles all TimeAPI-relevant processes.
 
     const [local, setLocal] = useState<string>('');
 
     useEffect(() => {
+        // Fetches and sets the <local> dateTime on Component-Mount & Updates.
 
         const url = GET + TZ.PHT;
 
@@ -23,7 +25,11 @@ export default function TimeAPI() {
 
     return (
 
-        <div className='flex flex-row justify-evenly h-[100px] px-[3%] py-[0.5%]'>
+        <div className='flex justify-evenly
+            landscape:flex-row landscape:h-[100px] landscape:w-full
+            portrait:flex-col portrait:w-[150px] portrait:h-full
+            px-[2%] py-[1%]
+        '>
 
             {!local ? <p className='text-2xl'> Loading data... </p> :
                 <>
