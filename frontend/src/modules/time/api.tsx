@@ -4,7 +4,7 @@ import { TZ, GET, getDateTime } from './_shared';
 import { Conversion } from './conversions';
 
 
-export function TimeAPI() {
+export default function TimeAPI() {
 
     const [local, setLocal] = useState<string>('');
 
