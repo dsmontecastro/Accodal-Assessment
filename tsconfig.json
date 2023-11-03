@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "composite": true,
-    "declaration": true,
+    "declaration": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -25,19 +24,5 @@
       "DOM",
       "DOM.Iterable"
     ]
-  },
-  // "references": [
-  //   {
-  //     "path": "./packages/types"
-  //   },
-  //   {
-  //     "path": "./packages/utils"
-  //   },
-  //   {
-  //     "path": "./packages/server"
-  //   },
-  //   {
-  //     "path": "./packages/client"
-  //   }
-  // ]
+  }
 }
