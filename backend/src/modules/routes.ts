@@ -35,7 +35,7 @@ router.get('/', (_, res) => {
     const select = db.prepare('SELECT * FROM items;');
     const results = select.all();
 
-    if (results) {
+    if (results.length > 0) {
         res.status(200).send(results);
     } else {
         res.status(404).send({ id: 0, message: MESSAGE.EMPTY })
