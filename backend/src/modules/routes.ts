@@ -27,7 +27,7 @@ enum MESSAGE {
 
 router.get('/', (_, res) => {
     /**
-     * Endpoint for GETting ALL <item>(s).
+     * Endpoint to GET ALL <item>(s).
      * @return {Item[]}      on success. 
      * @return {APIResponse} on failure.
     */
@@ -45,7 +45,7 @@ router.get('/', (_, res) => {
 
 router.get('/:id', (req, res) => {
     /**
-     * Endpoint for GETting ONE <item> by its <id>.
+     * Endpoint to GET ONE <item> by its <id>.
      * @return {Item}        on success. 
      * @return {APIResponse} on failure.
     */
@@ -65,7 +65,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     /**
-     * Endpoint for POSTing an <item>.
+     * Endpoint to POST (insert) an <item>.
+     * @param {Item} body The Request-Body must contain a valid <item> to insert.
      * @return {APIResponse} on either success or failure.
     */
 
@@ -98,7 +99,8 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     /**
-     * Endpoint for PUTting (updating) an <item> by its <id>.
+     * Endpoint to PUT (update) an <item> by its <id>.
+     * @param {Item} body The Request-Body must contain a valid <item> to update with.
      * @return {APIResponse} on either success or failure.
     */
 
