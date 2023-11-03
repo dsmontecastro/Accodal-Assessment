@@ -4,11 +4,12 @@
 
 
 import cors from 'cors';
+import helmet from 'helmet';
 import express from 'express';
 import { config } from 'dotenv';
 
-import logger from './modules/logger.js';
 import items from './modules/routes.js';
+import logger from './modules/logger.js';
 
 
 // #region : Settings & Configuration ------------------------------------------------------------------------
@@ -21,6 +22,7 @@ const PORT = parseInt(`${process.env.PORT}`) || 8080;
 // Express Configs
 const app = express();
 app.use(express.json());
+app.use(helmet());
 app.use(cors());
 
 // #endregion ------------------------------------------------------------------------------------------------
@@ -33,12 +35,13 @@ app.listen(PORT, HOST, () => {
 });
 
 
+// Home/Index, primarily for checking if the server is running.
 app.get('/', (_, res) => {
-    // Home/Index, primarily for checking if the server is running.
     res.send('<p> SERVER IS UP! </p>');
 
 });
 
+// Items-Routes
 app.use('/items', items);
 
 // #endregion ------------------------------------------------------------------------------------------------
