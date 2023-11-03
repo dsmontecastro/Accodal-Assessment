@@ -1,0 +1,8 @@
+{
+  "name": "accodal-assessment",
+  "author": "Daniel S. Montecastro",
+  "license": "ISC",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {}
+}
