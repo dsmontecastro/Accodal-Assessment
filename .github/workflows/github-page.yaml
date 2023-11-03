@@ -47,6 +47,7 @@ jobs:
         run: pnpm i
   
       - name: Build Types
+        working-directory: ./frontend
         run: pnpm run build
 
       - name: Setup Pages
