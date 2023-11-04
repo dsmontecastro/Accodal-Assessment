@@ -15,27 +15,28 @@ export default function Card({ id, photo }: Props) {
     const url = photo.url;
     const title = getTitle(url);
 
-    function getTitle(text: string) {
+    function getTitle(url: string) {
         /**
          * Extracts the <title> from the <photo>'s <url>.
-         * @param {string} text String that should be the <photo>'s url.
+         * Sample URL: https://www.pexels.com/photo/this-is-a-title-000000/
+         * @param {string} url String that is expected to be the <photo>'s url.
          * @return {string} Returns a properly split & capitalized <title>.
         */
 
-        const texts = text.split('/');
-        let title = texts.slice(-2, -1)[0];
+        const texts = url.split('/');          // Separate relevant strings and
+        let title = texts.slice(-2, -1)[0];     // set the <title> as the 2nd-to-the-last string
 
-        const end = title.lastIndexOf('-');
-        title = title.slice(0, end);
+        const end = title.lastIndexOf('-');     // Get the index of the last dash in the <title>
+        title = title.slice(0, end);            // to remove the numeric ID
 
-        let titles = title.split('-');
-        titles = titles.map((text) => {
+        let titles = title.split('-');          // Split the <title> by its dashes
+        titles = titles.map((text) => {         // and capitalize each word
             const start = text[0].toUpperCase();
             const word = start + text.slice(1)
             return word;
         })
 
-        return titles.join(' ');
+        return titles.join(' ');                // Return the joined <title>
 
     }
 
