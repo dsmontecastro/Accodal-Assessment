@@ -3,6 +3,9 @@ import PexelsAPI from "./pexels/api";
 
 
 export default function App() {
+  /**
+   * Component Entry-Point for <main.tsx> 
+  */
 
   return (
     <div id='app' className='flex flex-col
