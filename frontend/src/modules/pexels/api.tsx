@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import PhotoCard from './photo';
-import { Photo } from './_shared';
+import { Pages, Photo } from './_shared';
 
 
 // #region : Constants ---------------------------------------------------------------------------------------
@@ -46,10 +46,11 @@ export default function PexelsAPI() {
       fetch(link, options)
         .then(response => response.json())
         .then(json => {
-          setPage(json.page);
-          setPhotos(json.photos);
-          setPrev(json.prev_page);
-          setNext(json.next_page);
+          const page = json as Pages;
+          setPage(page.page);
+          setPhotos(page.photos);
+          setPrev(page.prev_page);
+          setNext(page.next_page);
         })
         .catch(error => console.error(error));
 
