@@ -21,7 +21,7 @@ export function Conversion({ zone, name, local }: Props) {
 
     useEffect(() => {
         /**
-         * Fetches and sets the <local> dateTime on Component-Mount & Updates.
+         * Fetches and sets the <local> dateTime when fed a valid <local> dateTime.
          * Will only process if the <local> dateTime is not empty.
         */
 
