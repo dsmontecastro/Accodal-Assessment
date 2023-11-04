@@ -1,10 +1,3 @@
-
-export function getPhotos(json: Pages): Photo[] {
-
-    return json.photos;
-}
-
-
 export interface Pages {
     page: number
     per_page: number

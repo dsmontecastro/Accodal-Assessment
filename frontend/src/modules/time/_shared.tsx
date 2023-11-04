@@ -20,12 +20,26 @@ export enum TZ {
 // region : Functions ----------------------------------------------------------------------------------------
 
 export function getDateTime(json: CurrentTime | ConversionResult): string {
+    /**
+     * Extracts the <dateTime> property from a JSON object.
+     * @param { CurrentTime | ConversionResult } json The JSON object to be processed.
+     * @return {string} Returns the expected <dateTime> object.
+    */
+
     let dateTime = json.dateTime;
     dateTime = dateTime.split('.')[0];
+
     return dateTime.replace('T', ' ');
+
 }
 
 export function convertDateTime(json: Conversion): string {
+    /**
+     * Extracts the <dateTime> property from a Conversion JSON .
+     * @param {Conversion} json The JSON object to be processed.
+     * @return {string} Returns the expected <dateTime> object.
+    */
+
     const result = json.conversionResult;
     return getDateTime(result);
 
@@ -35,7 +49,6 @@ export function convertDateTime(json: Conversion): string {
 
 
 // region : JSON Schema --------------------------------------------------------------------------------------
-
 
 export interface ConvertRequest {
     fromTimeZone: string
