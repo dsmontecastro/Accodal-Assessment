@@ -75,8 +75,6 @@ router.post('/', (req, res) => {
         const body = validate(req.body);
         if (!body.desc) body.desc = '';
 
-        console.log(body);
-
         const insert = db.prepare(`
             INSERT INTO items
             (name, owner, desc)
