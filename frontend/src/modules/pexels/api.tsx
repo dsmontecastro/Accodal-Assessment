@@ -83,7 +83,7 @@ export default function PexelsAPI() {
           </button>
         </div>
 
-        <div id='pexels-grid' className='grid gap-[15px] p-[3%]
+        <div id='pexels-grid' className='flex-grow grid gap-[15px] p-[3%]
           grid-cols-4 grid-rows-5 max-sm:grid-cols-3 max-sm:grid-rows-6
         '>
 
