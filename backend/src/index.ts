@@ -28,17 +28,15 @@ app.use(cors());
 // #endregion ------------------------------------------------------------------------------------------------
 
 
-// #region : Application Proper + Routing --------------------------------------------------------------------
+// #region : Application Proper ------------------------------------------------------------------------------
 
 app.listen(PORT, HOST, () => {
     logger.info(`LISTENING @ ${HOST}:${PORT}`);
 });
 
-
-// Home/Index, primarily for checking if the server is running.
+// Index, primarily for checking if the server is running.
 app.get('/', (_, res) => {
     res.send('<p> SERVER IS UP! </p>');
-
 });
 
 // Items-Routes
