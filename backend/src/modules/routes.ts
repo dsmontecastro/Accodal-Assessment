@@ -28,12 +28,12 @@ enum MESSAGE {
 router.get('/', (_, res) => {
     /**
      * Endpoint to GET ALL <item>(s).
-     * @return {Item[]}      on success. 
+     * @return {Item[]}      on success.
      * @return {APIResponse} on failure.
     */
 
-    const select = db.prepare('SELECT * FROM items;');
-    const results = select.all();
+    const select = db.prepare('SELECT * FROM items;');  // <db> instance runs command
+    const results = select.all();                       // <results> collects all found <item>s
 
     if (results.length > 0) {
         res.status(200).send(results);
@@ -46,7 +46,7 @@ router.get('/', (_, res) => {
 router.get('/:id', (req, res) => {
     /**
      * Endpoint to GET ONE <item> by its <id>.
-     * @return {Item}        on success. 
+     * @return {Item}        on success.
      * @return {APIResponse} on failure.
     */
 
@@ -77,7 +77,13 @@ router.post('/', (req, res) => {
 
         console.log(body);
 
-        const insert = db.prepare('INSERT INTO items (name, owner, desc) VALUES (@name, @owner, @desc);');
+        const insert = db.prepare(`
+            INSERT INTO items
+            (name, owner, desc)
+            VALUES
+            (@name, @owner, @desc);
+        `);
+
         const result = insert.run(body);
 
         if (result.changes > 0) {
