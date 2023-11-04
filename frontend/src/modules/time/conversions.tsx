@@ -45,7 +45,7 @@ export function Conversion({ zone, name, local }: Props) {
                 body: JSON.stringify(data)
             }
 
-            fetch(url, options,)
+            fetch(url, options)
                 .then(response => response.json())
                 .then(json => convertDateTime(json))
                 .then(result => setDateTime(result))
