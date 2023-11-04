@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import PhotoCard from './photo';
+import PhotoCard from './card';
 import { Pages, Photo } from './_shared';
 
 

@@ -5,7 +5,7 @@ interface Props {
     photo: Photo
 }
 
-export default function PhotoCard({ id, photo }: Props) {
+export default function Card({ id, photo }: Props) {
     /**
      * Cards for the Pexels-Grid component.
      * @param {number} id    Indexing for the <key> prop.
