@@ -23,7 +23,7 @@ export default function Card({ id, photo }: Props) {
          * @return {string} Returns a properly split & capitalized <title>.
         */
 
-        const texts = url.split('/');          // Separate relevant strings and
+        const texts = url.split('/');           // Split the <url> by its slashes and
         let title = texts.slice(-2, -1)[0];     // set the <title> as the 2nd-to-the-last string
 
         const end = title.lastIndexOf('-');     // Get the index of the last dash in the <title>
@@ -67,6 +67,7 @@ export default function Card({ id, photo }: Props) {
             </span>
 
         </div>
+
     )
 
 }
