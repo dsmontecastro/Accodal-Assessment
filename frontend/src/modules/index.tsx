@@ -2,7 +2,7 @@ import TimeAPI from "./time/api";
 import PexelsAPI from "./pexels/api";
 
 
-function App() {
+export default function App() {
 
   return (
     <div id='app' className='flex flex-col
@@ -15,5 +15,3 @@ function App() {
   )
 
 }
-
-export default App;
